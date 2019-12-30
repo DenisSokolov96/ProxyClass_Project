@@ -7,8 +7,8 @@ public class Main {
         PrintInfo print = new PrintInfo();
 
         IMyPrintClass iprint = (IMyPrintClass) Proxy.newProxyInstance
-                (PrintInfo.class.getClassLoader(),
-                        PrintInfo.class.getInterfaces(),
+                (print.getClass().getClassLoader(),
+                        print.getClass().getInterfaces(),
                         new DynamicInvocationHandler(print));
 
         iprint.printInfo();//
